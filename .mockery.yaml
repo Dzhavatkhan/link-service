@@ -1,0 +1,18 @@
+# Глобальные настройки генерации
+all: true
+recursive: true
+
+# В v3 настройки вывода упакованы в блок 'output'
+output:
+  mode: file
+  dir: "{{.InterfaceDir}}/mocks"
+  filename: "mock_{{.InterfaceName}}.go"
+  package-name: "mocks"
+
+# Настройки для самих моков (expecter переехал сюда)
+mock:
+  with-expecter: true
+
+# Имя вашего Go-модуля
+packages:
+  link-service:
