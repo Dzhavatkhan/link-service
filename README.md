@@ -19,26 +19,26 @@
 ### Сборка
 
 ```bash
-go build -o link-service cmd/url-shortener/main.go
+go build -o link-service/cmd/url-shortener/main.go
 ```
 
 ## Запуск
 
 ```bash
-./link-service
+go run -o link-service/cmd/url-shortener/main.go
+
 ```
 
 ## Пример запроса
 
 ```bash
-curl -X POST -d '{"url":"https://github.com/oscript-library/go-link-service"}' http://localhost:8080/api/v1/url
+curl -X POST -d '{"url":"https://github.com/oscript-library/go-link-service"}' http://localhost:8080/url
 ```
 
 ## Пример ответа
 
 ```json
 {
-  "id": 1,
   "alias": "github.com",
   "url": "https://github.com/oscript-library/go-link-service"
 }
